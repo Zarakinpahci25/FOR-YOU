@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Letter for Kr’pa — Kenny</title>
+<meta name="description" content="A sincere letter from Kenny to Kr’pa.">
+<style>
+  :root{
+    --ink:#26364a;
+    --muted:#718096;
+    --blue:#8fb7d9;
+    --blue-deep:#47749d;
+    --paper:rgba(255,255,255,.94);
+    --line:#dce8f1;
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    min-height:100vh;
+    color:var(--ink);
+    font-family: Georgia, "Times New Roman", serif;
+    background:
+      radial-gradient(circle at 15% 10%, rgba(180,215,238,.55), transparent 28%),
+      radial-gradient(circle at 90% 25%, rgba(218,235,247,.75), transparent 30%),
+      linear-gradient(145deg,#f4f9fc,#eaf3f9 50%,#f8fbfd);
+    overflow-x:hidden;
+  }
+
+  .petals{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+  .petal{
+    position:absolute;
+    top:-40px;
+    width:10px;height:15px;
+    border-radius:70% 30% 70% 30%;
+    background:rgba(255,255,255,.88);
+    box-shadow:0 1px 8px rgba(76,116,148,.12);
+    animation:fall linear infinite;
+  }
+  .petal:nth-child(1){left:8%;animation-duration:13s;animation-delay:-4s}
+  .petal:nth-child(2){left:23%;animation-duration:17s;animation-delay:-10s;transform:scale(.7)}
+  .petal:nth-child(3){left:43%;animation-duration:15s;animation-delay:-7s;transform:scale(.8)}
+  .petal:nth-child(4){left:61%;animation-duration:19s;animation-delay:-14s;transform:scale(.65)}
+  .petal:nth-child(5){left:79%;animation-duration:14s;animation-delay:-5s}
+  .petal:nth-child(6){left:94%;animation-duration:18s;animation-delay:-11s;transform:scale(.75)}
+  @keyframes fall{
+    0%{transform:translate3d(0,-30px,0) rotate(0deg);opacity:0}
+    12%{opacity:.9}
+    100%{transform:translate3d(90px,110vh,0) rotate(280deg);opacity:0}
+  }
+
+  main{position:relative;z-index:1;max-width:820px;margin:auto;padding:38px 18px 70px}
+
+  .hero{
+    text-align:center;
+    padding:34px 18px 30px;
+    animation:fadeUp .9s ease both;
+  }
+  .flowers{
+    display:flex;justify-content:center;gap:12px;
+    margin-bottom:14px;
+  }
+  .flower{
+    position:relative;width:28px;height:38px;
+    animation:sway 4s ease-in-out infinite;
+  }
+  .flower:nth-child(2){animation-delay:-1s}
+  .flower:nth-child(3){animation-delay:-2s}
+  .flower:before{
+    content:"";
+    position:absolute;left:7px;top:2px;
+    width:14px;height:18px;
+    background:linear-gradient(135deg,#fff,#eaf4fb);
+    border:1px solid #d6e4ee;
+    border-radius:70% 35% 65% 40%;
+    transform:rotate(-14deg);
+    box-shadow:0 3px 8px rgba(72,105,132,.12);
+  }
+  .flower:after{
+    content:"";
+    position:absolute;left:13px;top:18px;
+    width:2px;height:19px;background:#83a98d;
+    border-radius:2px;
+  }
+  @keyframes sway{50%{transform:rotate(3deg) translateY(-2px)}}
+
+  .eyebrow{
+    font-family:Arial,sans-serif;
+    text-transform:uppercase;
+    letter-spacing:.22em;
+    font-size:.72rem;
+    color:var(--blue-deep);
+    margin:0 0 10px;
+  }
+  h1{
+    margin:0;
+    font-size:clamp(2.1rem,7vw,4rem);
+    font-weight:500;
+    letter-spacing:-.03em;
+    color:#29445d;
+  }
+  .subtitle{
+    margin:12px 0 0;
+    font-style:italic;
+    color:var(--muted);
+    font-size:1.05rem;
+  }
+
+  .letter{
+    background:var(--paper);
+    border:1px solid rgba(174,202,221,.72);
+    border-radius:22px;
+    padding:clamp(28px,6vw,58px);
+    box-shadow:0 24px 70px rgba(56,91,119,.13);
+    position:relative;
+    overflow:hidden;
+    animation:fadeUp 1s .15s ease both;
+  }
+  .letter:before{
+    content:"";
+    position:absolute;inset:0;
+    background:linear-gradient(90deg,transparent,rgba(150,195,224,.08),transparent);
+    pointer-events:none;
+  }
+  .date-line{
+    text-align:right;
+    font-family:Arial,sans-serif;
+    font-size:.76rem;
+    color:#94a7b7;
+    letter-spacing:.08em;
+    margin-bottom:32px;
+  }
+  .salutation{
+    font-size:1.25rem;
+    margin-bottom:25px;
+  }
+  p{
+    font-size:1.04rem;
+    line-height:1.92;
+    margin:0 0 22px;
+  }
+  .emphasis{
+    margin:30px 0;
+    padding:19px 20px;
+    border-left:3px solid #9ec2df;
+    background:linear-gradient(90deg,#f1f7fb,transparent);
+    font-style:italic;
+    color:#49647a;
+  }
+  .closing{
+    margin-top:42px;
+    padding-top:28px;
+    border-top:1px solid var(--line);
+  }
+  .signature{
+    font-size:1.35rem;
+    margin-top:6px;
+  }
+
+  .ending{
+    text-align:center;
+    padding:44px 15px 0;
+    animation:fadeUp 1s .3s ease both;
+  }
+  .ending .heart{font-size:1.6rem;animation:pulse 2.2s ease-in-out infinite}
+  .ending p{
+    font-size:.95rem;
+    color:#74899b;
+    margin:10px 0 0;
+  }
+  @keyframes pulse{50%{transform:scale(1.12)}}
+
+  .read-note{
+    margin-top:20px;
+    text-align:center;
+    font-family:Arial,sans-serif;
+    font-size:.73rem;
+    letter-spacing:.08em;
+    color:#8aa0b2;
+    text-transform:uppercase;
+  }
+
+  @keyframes fadeUp{
+    from{opacity:0;transform:translateY(18px)}
+    to{opacity:1;transform:translateY(0)}
+  }
+
+  @media (max-width:600px){
+    main{padding:20px 12px 48px}
+    .hero{padding:25px 10px}
+    .letter{border-radius:18px;padding:28px 22px}
+    p{font-size:1rem;line-height:1.82}
+    .date-line{text-align:left}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation:none!important;scroll-behavior:auto!important}
+  }
+</style>
+
+<style>
+  .open-gate{
+    position:fixed;inset:0;z-index:30;display:flex;align-items:center;justify-content:center;
+    padding:22px;background:linear-gradient(145deg,#f4f9fc,#e6f1f8);
+    transition:opacity .55s ease,visibility .55s ease;
+  }
+  .open-gate.hidden{opacity:0;visibility:hidden;pointer-events:none}
+  .gate-card{
+    width:min(430px,100%);text-align:center;padding:38px 25px;
+    border:1px solid rgba(174,202,221,.8);border-radius:24px;
+    background:rgba(255,255,255,.94);box-shadow:0 24px 65px rgba(56,91,119,.14);
+  }
+  .gate-tulips{font-size:2rem;letter-spacing:.14em;margin-bottom:12px}
+  .gate-card h2{margin:0;color:#29445d;font-weight:500;font-size:2.15rem}
+  .gate-card p{margin:10px 0 23px;color:#718096;font-size:1rem}
+  .gate-btn{
+    border:0;cursor:pointer;padding:13px 22px;border-radius:999px;
+    color:#fff;background:#6f9cbe;font:700 .76rem Arial,sans-serif;
+    letter-spacing:.08em;text-transform:uppercase;box-shadow:0 9px 22px rgba(71,116,157,.2)
+  }
+  .gate-song{margin-top:15px;font:italic .82rem Georgia,serif;color:#728a9d}
+  .song-gate{display:none}
+  .song-gate.visible{display:block;animation:fadeUp .6s ease both}
+  .play-song{
+    display:inline-flex;align-items:center;gap:9px;margin-top:17px;
+    border:1px solid #aecadd;border-radius:999px;padding:12px 19px;
+    background:#f5fafd;color:#466b87;cursor:pointer;
+    font:700 .78rem Arial,sans-serif;letter-spacing:.04em;
+  }
+  .play-song:hover{background:#edf6fb}
+  .play-song.playing{background:#eaf4fa}
+  .gate-hint{margin-top:12px!important;font-size:.76rem!important;color:#92a4b2!important}
+  .music-card{
+    max-width:390px;margin:20px auto 8px;display:flex;align-items:center;gap:13px;
+    padding:10px 13px;border:1px solid rgba(174,202,221,.7);border-radius:15px;
+    background:rgba(255,255,255,.75);box-shadow:0 9px 25px rgba(56,91,119,.07)
+  }
+  .music-icon{width:36px;height:36px;display:grid;place-items:center;border-radius:50%;background:#eef6fb;color:#527b9c}
+  .music-info{flex:1;text-align:left}.music-info strong{display:block;font-size:.9rem;color:#36566f}
+  .music-info span{display:block;font: .68rem Arial,sans-serif;color:#8799a8;margin-top:2px}
+  .music-state{font:700 .68rem Arial,sans-serif;color:#6f9cbe}
+  .petals-started .petal{animation-play-state:running}
+</style>
+
+</head>
+
+<body>
+
+<div class="open-gate" id="openGate">
+  <div class="gate-card">
+    <div class="gate-tulips" aria-hidden="true">🌷 🌷 🌷</div>
+    <h2>A Letter for Kr’pa</h2>
+    <p>From Kenny, with sincerity.</p>
+    <button class="gate-btn" id="openLetter">♡ Open the letter ♡</button>
+
+    <div class="song-gate" id="songGate">
+      <div class="gate-song">A song I'd like you to hear first</div>
+      <button class="play-song" id="playSong">▶ Play Sunsetz</button>
+      <p class="gate-hint">Cigarettes After Sex</p>
+    </div>
+  </div>
+</div>
+
+<div class="petals" aria-hidden="true">
+  <span class="petal"></span><span class="petal"></span><span class="petal"></span>
+  <span class="petal"></span><span class="petal"></span><span class="petal"></span>
+</div>
+
+<main>
+  <header class="hero">
+    <div class="flowers" aria-hidden="true">
+      <span class="flower"></span><span class="flower"></span><span class="flower"></span>
+    </div>
+    <p class="eyebrow">From Kenny, with sincerity</p>
+    <h1>A Letter for Kr’pa</h1>
+    <p class="subtitle">Some things are easier to write when they come from the heart.</p>
+    <div class="read-note">Take your time reading this</div>
+  </header>
+
+  <article class="letter" id="letterContent" style="opacity:0;transform:translateY(18px);pointer-events:none">
+    <div class="date-line">WITH HONESTY • GRATITUDE • LOVE</div>
+
+    <div class="salutation">Dear Kr’pa,</div>
+
+    <p>I’ve been thinking a lot about us and about the way I treated you, and I know I owe you a sincere apology.</p>
+
+    <p>I’m sorry for being selfish. I’m sorry for always thinking about what I wanted and what I was comfortable with, without realizing how much I was hurting you. I know there were times when you needed me to compromise, but instead, I chose what was easier for me.</p>
+
+    <p>Most of all, I’m sorry for being so avoidant. Whenever things became difficult or uncomfortable, I pulled away instead of communicating with you. I shut you out when I should have opened up. I created distance when what you needed was reassurance, understanding, and my presence.</p>
+
+    <div class="emphasis">And I know you kept trying.</div>
+
+    <p>You kept chasing me, trying to understand me, trying to fix things, and trying to hold on to what we had. Meanwhile, I kept giving you reasons to feel like you were the only one fighting for us. You kept reaching for me while I kept pulling away. I realize now how exhausting and painful that must have been for you.</p>
+
+    <p>I’m also sorry that I gave up so easily on us. At the time, I was genuinely concerned that our relationship was causing you too much stress, especially because of me. I thought that letting go might give you peace and keep you from having to continue carrying the weight of our problems. But I realize now that giving up without properly communicating with you was not the right way to handle it.</p>
+
+    <p>Instead of deciding for you what was best, I should have talked to you, listened to what you wanted, and faced our problems together.</p>
+
+    <p>I also want you to know that I really do understand you. Especially on your birthday, when we talked about us and you finally told me everything you had been feeling. Everything you said about us, about me, and about how my actions hurt you was true. I know that now.</p>
+
+    <p>While you were telling me everything you had been holding inside, I quietly listened to you. I listened to your rants about me, about the things I did, and about the ways I hurt you. I didn’t interrupt you because, deep down, I knew you had every right to say those things. You had been carrying those feelings for a long time, and you deserved to be heard.</p>
+
+    <p>Looking back, I realize that I should have listened to you like that much earlier. I should have understood your feelings before you reached the point of being exhausted. I’m sorry it took losing you and having that conversation for me to truly understand what you had been trying to tell me all along.</p>
+
+    <p>I’m also sorry for thinking so negatively about our relationship. I was very wrong about that. I focused so much on the problems, the difficult moments, and the things that went wrong that I allowed those thoughts to overshadow everything good we had.</p>
+
+    <p>The truth is, I have so many positive thoughts and memories about us too. It wasn’t all negative. There were so many moments when you made me happy, made me feel loved, made me laugh, and gave me memories that I will always cherish.</p>
+
+    <p>I still remember the little things, too. Like when you sang and drew that pig. You were so cute in that moment, and it was one of those simple things that made me genuinely happy. It may have seemed like such a small moment, but I remember it. Sometimes I find myself wishing I could hear you sing like that again and see those little things you used to do.</p>
+
+    <p>Those are the moments I should have appreciated more. The silly moments, the simple conversations, the laughter, and the little things that made being with you special. They mattered to me, even if I didn’t always know how to express it.</p>
+
+    <p>I also want you to know that I have always been very proud of you. I just didn’t know how to communicate it or how to properly show my emotions. I know that sometimes my silence or the way I acted may have made you feel like I wasn’t proud of you, but that was never the truth.</p>
+
+    <p>I remember when you passed the Criminology Licensure Examination. I was genuinely so proud of you. I even told my workmates that you passed it so easily. I was proud enough to share your achievement with the people around me, even though I struggled to tell you directly and show you how proud I really was.</p>
+
+    <p>Looking back, I realize you deserved to hear those things from me—not just from the way I talked about you to other people. You deserved to feel my pride, my support, and my happiness for you directly.</p>
+
+    <p>I’m sorry that I didn’t know how to express those emotions when it mattered. I’m sorry if my inability to communicate made you question how much I cared. My feelings were there; I just didn’t know how to show them properly.</p>
+
+    <p>These past months have given me a lot of time to reflect on myself. I’ve realized that avoiding difficult conversations doesn’t make problems disappear, and keeping my feelings to myself doesn’t protect anyone. It only creates distance and hurts the person who is trying to reach me. My isolation only made things worse. I know now that I need to learn how to communicate, compromise, and express what I feel instead of running away from you.</p>
+
+    <p>I know I still have a lot to learn about myself, but I don’t want to keep repeating the same mistakes. I want to become someone who can face difficult conversations instead of avoiding them, someone who can express what he feels instead of keeping everything inside, and someone who understands that love requires effort from both people.</p>
+
+    <p>You shouldn’t have had to beg for my attention, my communication, or my effort. You shouldn’t have had to constantly wonder where you stood with me. You deserved someone who could communicate, show up, and make you feel secure—not someone who made you feel like you had to chase them just to feel loved.</p>
+
+    <p>I’m sorry that I only truly understood this after you became tired.</p>
+
+    <p>I don’t want to make excuses for the way I behaved. I take responsibility for my actions. I know an apology can’t undo the hurt I caused, and I don’t expect you to simply forgive me because I’m finally admitting my mistakes.</p>
+
+    <p>I’m also not writing this to pressure you into coming back to me. You have every right to choose your own peace and to move forward without me. If letting go of me is what you need to heal, I will respect that.</p>
+
+    <p>I just want you to know that I’m genuinely sorry—for being selfish, for pulling away, for making you chase me, for thinking so negatively about us, for giving up too easily, and for not appreciating your effort while you were still giving me your love.</p>
+
+    <p>Thank you for loving me even during the times when I didn’t know how to properly receive it.</p>
+
+    <p>I’m sorry I made you tired from trying to love someone who kept running away.</p>
+
+    <p>I hope that someday, regardless of what happens between us, you can know that I truly regret hurting you.</p>
+
+    <div class="closing">
+      <p>I wish I had realized all of this sooner. I’m sorry.</p>
+      <p class="signature">Yours,<br><strong>Kenny</strong></p>
+    </div>
+  </article>
+
+  <footer class="ending">
+    <div class="heart">♡</div>
+    <p>Made with honesty, gratitude, and love.</p>
+  </footer>
+</main>
+
+<div style="position:fixed;left:-9999px;top:0;width:1px;height:1px;opacity:0;pointer-events:none" aria-hidden="true">
+  <iframe id="songFrame" width="1" height="1" frameborder="0"
+    allow="autoplay; encrypted-media; picture-in-picture"
+    title="Sunsetz — Cigarettes After Sex"></iframe>
+</div>
+
+<script>
+(function(){
+  const openGate = document.getElementById('openGate');
+  const openLetter = document.getElementById('openLetter');
+  const songGate = document.getElementById('songGate');
+  const playSong = document.getElementById('playSong');
+  const frame = document.getElementById('songFrame');
+  const letter = document.getElementById('letterContent');
+  const petals = document.querySelector('.petals');
+
+  openLetter.addEventListener('click', function(){
+    openLetter.style.display = 'none';
+    songGate.classList.add('visible');
+  }, {once:true});
+
+  playSong.addEventListener('click', function(){
+    // This is a direct user gesture, so YouTube is allowed to request playback.
+    frame.src = 'https://www.youtube.com/embed/5-rbSNzU_b8?autoplay=1&rel=0';
+    playSong.classList.add('playing');
+    playSong.innerHTML = '♫ Sunsetz is playing';
+    if (petals) petals.classList.add('petals-started');
+
+    setTimeout(function(){
+      letter.style.opacity = '1';
+      letter.style.transform = 'translateY(0)';
+      letter.style.pointerEvents = 'auto';
+    }, 700);
+
+    setTimeout(function(){
+      openGate.classList.add('hidden');
+      setTimeout(function(){ openGate.remove(); }, 600);
+    }, 850);
+  }, {once:true});
+})();
+</script>
+
+
+<script>
+(function () {
+  function initLetter() {
+    var buttons = Array.from(document.querySelectorAll("button"));
+    var openBtn = document.getElementById("openBtn") ||
+      buttons.find(function (b) { return /open the letter/i.test(b.textContent || ""); });
+
+    if (!openBtn) return;
+
+    openBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      var gate = document.getElementById("gate") ||
+                 document.querySelector(".gate, .opening, .intro, .cover");
+      var playBtn = document.getElementById("playBtn") ||
+                    buttons.find(function (b) { return /play sunsetz/i.test(b.textContent || ""); });
+      var letter = document.getElementById("letter") ||
+                   document.querySelector(".letter, .letter-card, main");
+
+      if (gate) {
+        gate.classList.add("hidden", "fade-out");
+        gate.style.opacity = "0";
+        gate.style.pointerEvents = "none";
+        gate.style.visibility = "hidden";
+      }
+
+      if (playBtn) {
+        playBtn.style.display = "inline-flex";
+        playBtn.style.visibility = "visible";
+        playBtn.style.opacity = "1";
+      }
+
+      if (letter) {
+        letter.style.display = "none";
+      }
+    }, { once: true });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initLetter);
+  } else {
+    initLetter();
+  }
+})();
+</script>
+
+</body>
+</html>
